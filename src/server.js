@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 //const path = require('path')
 
 const db = require('./database/db')
@@ -8,6 +9,9 @@ const app = express()
 
 //conexao com bancod e dados
 db.connect()
+
+//habilita o CORS - api fica publica
+app.use(cors())
 
 //habilita serve para receber dados json
 app.use(express.json())
